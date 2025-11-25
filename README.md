@@ -18,14 +18,10 @@ The application allows users to sign up, log in, manage tasks, and stay authenti
 
 | Page | Screenshot |
 |------|------------|
-| Login |<img width="1917" height="965" alt="ogin" src="https://github.com/user-attachments/assets/031da692-4e06-4003-a3d6-dd0df02d85e2" />
- |
-| Signup |<img width="1912" height="977" alt="signup" src="https://github.com/user-attachments/assets/8a967d16-1fcb-4247-b699-85799dd02900" />
- |
-| Add Task |<img width="1910" height="967" alt="task manager" src="https://github.com/user-attachments/assets/82ab91d3-3ce7-4b25-9486-74901480cc13" />
- |
-| Task List |<img width="1912" height="970" alt="your tasks" src="https://github.com/user-attachments/assets/2b1fd55b-e689-4a40-8ec3-9c3940833411" />
- |
+| Login |<img width="1917" height="965" alt="ogin" src="https://github.com/user-attachments/assets/031da692-4e06-4003-a3d6-dd0df02d85e2" /> |
+| Signup |<img width="1912" height="977" alt="signup" src="https://github.com/user-attachments/assets/8a967d16-1fcb-4247-b699-85799dd02900" />|
+| Add Task |<img width="1910" height="967" alt="task manager" src="https://github.com/user-attachments/assets/82ab91d3-3ce7-4b25-9486-74901480cc13" />|
+| Task List |<img width="1912" height="970" alt="your tasks" src="https://github.com/user-attachments/assets/2b1fd55b-e689-4a40-8ec3-9c3940833411" />|
 
 
 ---
