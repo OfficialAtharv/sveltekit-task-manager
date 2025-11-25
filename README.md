@@ -62,3 +62,54 @@ The application allows users to sign up, log in, manage tasks, and stay authenti
 ```bash
 git clone https://github.com/YOUR_USERNAME/sveltekit-task-manager.git
 cd sveltekit-task-manager
+
+2️⃣ Enable RLS
+alter table tasks enable row level security;
+
+3️⃣ Policies
+create policy "User can read own tasks"
+on tasks for select using (auth.uid() = user_id);
+
+create policy "User can insert own tasks"
+on tasks for insert with check (auth.uid() = user_id);
+
+🧩 Third-party Libraries
+
+@supabase/supabase-js — Supabase client
+
+tailwindcss — Utility CSS
+
+daisyui — UI components
+
+⚙️ Assumptions / Design Decisions
+
+Only authenticated users can access /tasks and /tasks/new
+
+Users can see only their own tasks
+
+MVP contains only "Add" + "View" tasks (edit/delete optional)
+
+⚠️ Known Issues / Limitations
+
+No task editing or deletion in v1
+
+No sorting/filtering options
+
+No real-time task updates
+📚 License
+
+This project is open-source under the MIT License.
+
+---
+
+# 🎯 **NEXT STEP FOR YOU**
+Tell me:
+
+👉 “README created”  
+and  
+👉 “Screenshots added”
+
+Then I will take you to:
+
+### ⭐ STEP 6 — Vercel Deployment (optional but gives HUGE bonus points).
+
