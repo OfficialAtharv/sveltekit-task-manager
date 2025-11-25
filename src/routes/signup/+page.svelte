@@ -1,26 +1,34 @@
 <script>
 	import { supabase } from '$lib/supabase';
+	import { goto } from '$app/navigation';
 
 	let email = '';
 	let password = '';
 	let message = '';
 	let loading = false;
 
+	function validate() {
+		if (!email.includes('@')) return 'Please enter a valid email.';
+		if (password.length < 6) return 'Password must be at least 6 characters.';
+		return '';
+	}
+
 	async function signup() {
+		message = '';
+		const err = validate();
+		if (err) { message = err; return; }
 		loading = true;
 
-		const { data, error } = await supabase.auth.signUp({
-			email,
-			password
-		});
+		const { data, error } = await supabase.auth.signUp({ email, password });
 
 		if (error) {
 			message = error.message;
-		} else {
-			message = "Signup successful! Now login.";
+			loading = false;
+			return;
 		}
 
-		loading = false;
+		message = 'Signup successful — please check email (if confirmation enabled). Redirecting to login...';
+		setTimeout(() => goto('/login'), 1200);
 	}
 </script>
 
@@ -32,11 +40,12 @@
 		<input class="input input-bordered w-full mb-3" placeholder="Password" type="password" bind:value={password} />
 
 		<button class="btn btn-primary w-full" on:click={signup} disabled={loading}>
-			{loading ? "Creating..." : "Sign Up"}
+			{loading ? 'Creating...' : 'Sign Up'}
 		</button>
 
 		{#if message}
-			<p class="mt-3 text-center text-sm text-error">{message}</p>
+		<p class="mt-3 text-center text-sm text-error">{message}</p>
+
 		{/if}
 	</div>
 </div>

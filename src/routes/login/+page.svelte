@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { supabase } from '$lib/supabase';
 	import { goto } from '$app/navigation';
 
@@ -7,16 +8,17 @@
 	let loading = false;
 	let message = '';
 
+
+	onMount(async () => {
+		const { data } = await supabase.auth.getUser();
+		if (data?.user) goto('/tasks');
+	});
+
 	async function login() {
-		loading = true;
 		message = '';
+		loading = true;
 
-		const { data, error } = await supabase.auth.signInWithPassword({
-			email,
-			password
-		});
-
-		console.log("LOGIN RESULT:", data, error);
+		const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
 		if (error) {
 			message = error.message;
@@ -24,7 +26,6 @@
 			return;
 		}
 
-		// Successful login → redirect
 		goto('/tasks/new');
 	}
 </script>
@@ -37,7 +38,7 @@
 		<input class="input input-bordered w-full mb-3" placeholder="Password" type="password" bind:value={password} />
 
 		<button class="btn btn-primary w-full" on:click={login} disabled={loading}>
-			{loading ? "Logging in..." : "Login"}
+			{loading ? 'Logging in...' : 'Login'}
 		</button>
 
 		{#if message}
