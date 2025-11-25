@@ -1,38 +1,61 @@
-# sv
+# Task Manager — SvelteKit + Supabase + TailwindCSS + DaisyUI
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A simple task management application built as part of the **Proxie Studio Frontend Intern Assignment**.  
+The application allows users to sign up, log in, manage tasks, and stay authenticated using Supabase.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🚀 Tech Stack
+- **SvelteKit**
+- **Supabase Authentication + Database**
+- **TailwindCSS**
+- **DaisyUI Components**
+- **Vite**
 
-```sh
-# create a new project in the current directory
-npx sv create
+---
 
-# create a new project in my-app
-npx sv create my-app
-```
+## 📸 Screenshots
 
-## Developing
+| Page | Screenshot |
+|------|------------|
+| Login | ![](screenshots/login.png) |
+| Signup | ![](screenshots/signup.png) |
+| Add Task | ![](screenshots/add-task.png) |
+| Task List | ![](screenshots/task-list.png) |
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+(Add your actual screenshots inside `/screenshots`)
 
-```sh
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## 📦 Features
 
-## Building
+### 🔐 Authentication
+- Email/password signup
+- Login with session persistence
+- Protected routes (unauthenticated users redirected to login)
+- Logout functionality
 
-To create a production version of your app:
+### 📝 Task Management
+- Add new tasks with:
+  - Title
+  - Description
+  - Priority (Low/Medium/High)
+  - Due Date
+  - Status (default: Pending)
+- View all user-specific tasks
+- Clean DaisyUI card layout
 
-```sh
-npm run build
-```
+### 🎨 UI / UX
+- Responsive layout
+- Modern TailwindCSS styling
+- DaisyUI components for faster UI development
+- Navigation bar
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## 🛠️ Setup Instructions
+
+### 1️⃣ Clone repository
+```bash
+git clone https://github.com/YOUR_USERNAME/sveltekit-task-manager.git
+cd sveltekit-task-manager
