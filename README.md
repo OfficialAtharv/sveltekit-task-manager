@@ -58,11 +58,9 @@ Light/Dark theme toggle
 
 ## 🛠️ Setup Instructions
 
-### 1️⃣ Clone repository
-```bash
+ 1️⃣ Clone repository
 git clone https://github.com/YOUR_USERNAME/sveltekit-task-manager.git
 cd sveltekit-task-manager
-
 
 2️⃣ Enable RLS
 alter table tasks enable row level security;
@@ -92,7 +90,7 @@ MVP contains only "Add" + "View" tasks (edit/delete optional)
 
 This project is open-source under the MIT License.
 
----
+
 
 
 
