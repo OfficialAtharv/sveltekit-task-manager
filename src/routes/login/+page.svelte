@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { supabase } from '$lib/supabase';
+	import { supabase } from '$lib/supabaseClient';
 	import { goto } from '$app/navigation';
 
 	let email = '';
@@ -8,17 +8,16 @@
 	let loading = false;
 	let message = '';
 
-
 	onMount(async () => {
 		const { data } = await supabase.auth.getUser();
 		if (data?.user) goto('/tasks');
 	});
 
 	async function login() {
-		message = '';
 		loading = true;
+		message = '';
 
-		const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+		const { error } = await supabase.auth.signInWithPassword({ email, password });
 
 		if (error) {
 			message = error.message;
@@ -26,7 +25,7 @@
 			return;
 		}
 
-		goto('/tasks/new');
+		goto('/tasks');
 	}
 </script>
 

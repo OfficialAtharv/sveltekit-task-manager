@@ -1,5 +1,5 @@
 <script>
-	import { supabase } from '$lib/supabase';
+	import { supabase } from '$lib/supabaseClient';
 	import { goto } from '$app/navigation';
 
 	let email = '';
@@ -7,19 +7,11 @@
 	let message = '';
 	let loading = false;
 
-	function validate() {
-		if (!email.includes('@')) return 'Please enter a valid email.';
-		if (password.length < 6) return 'Password must be at least 6 characters.';
-		return '';
-	}
-
 	async function signup() {
 		message = '';
-		const err = validate();
-		if (err) { message = err; return; }
 		loading = true;
 
-		const { data, error } = await supabase.auth.signUp({ email, password });
+		const { error } = await supabase.auth.signUp({ email, password });
 
 		if (error) {
 			message = error.message;
@@ -27,8 +19,8 @@
 			return;
 		}
 
-		message = 'Signup successful — please check email (if confirmation enabled). Redirecting to login...';
-		setTimeout(() => goto('/login'), 1200);
+		message = 'Signup successful. Redirecting...';
+		setTimeout(() => goto('/login'), 1000);
 	}
 </script>
 
