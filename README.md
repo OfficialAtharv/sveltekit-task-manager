@@ -8,11 +8,14 @@ The app provides a smooth flow for creating an account, logging in, and managing
 ---
 
 **🚀 Tech Stack**
-
 SvelteKit – Application framework
+
 Supabase – Auth + Postgres DB
+
 TailwindCSS – Utility-first styling
+
 DaisyUI – Pre-styled UI components
+
 Vite – Fast development and bundling
 
 ---
@@ -21,7 +24,7 @@ Vite – Fast development and bundling
 
 | Page | Screenshot |
 |------|------------|
-| Login |<img width="1917" height="867" alt="login" src="https://github.com/user-attachments/assets/cb9fb829-3685-4787-bbdc-0d2f041b80ac" /> 
+| Login |<img width="1917" height="867" alt="login" src="https://github.com/user-attachments/assets/cb9fb829-3685-4787-bbdc-0d2f041b80ac" />
          <img width="1918" height="867" alt="login2" src="https://github.com/user-attachments/assets/93e5fe6f-ebfd-4513-ac31-5919bdb1c79d" />|
 | Signup |<img width="1918" height="873" alt="signup" src="https://github.com/user-attachments/assets/21d42550-cbe4-49c3-9ccb-e04fdd7eeea8" />
           <img width="1918" height="870" alt="signup2" src="https://github.com/user-attachments/assets/ffb105f0-5c10-44a7-af67-95750119b294" />|
