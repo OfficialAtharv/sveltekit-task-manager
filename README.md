@@ -23,7 +23,6 @@ The application allows users to sign up, log in, manage tasks, and stay authenti
 | Add Task | ![](screenshots/add-task.png) |
 | Task List | ![](screenshots/task-list.png) |
 
-(Add your actual screenshots inside `/screenshots`)
 
 ---
 
